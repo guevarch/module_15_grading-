@@ -1,6 +1,6 @@
-// MISSING LEGEND -10 and 
+// MISSING LEGEND -10 
 // MISSING Each point has a tooltip with the Magnitude, the location and depth -10
-
+// MISSING Data points colors change with depth level -10
 
 // We create the tile layer that will be the background of our map.
 console.log("Step 1 working");
@@ -46,18 +46,9 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   // This function determines the color of the marker based on the magnitude of the earthquake.
   function getColor(depth) {
     switch (true) {
-      case depth > 90:
-        return "#ea2c2c";
-      case depth > 70:
-        return "#ea822c";
-      case depth > 50:
-        return "#ee9c00";
-      case depth > 30:
-        return "#eecc00";
-      case depth > 10:
-        return "#d4ee00";
+
       default:
-        return "#98ee00";
+        return "#ea2c2c";
     }
   }
 
