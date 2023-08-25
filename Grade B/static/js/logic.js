@@ -82,7 +82,12 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     // We create a popup for each marker to display the magnitude and location of the earthquake after the marker has been created and styled
     onEachFeature: function (feature, layer) {
       layer.bindPopup(
-
+        // "Magnitude: "
+        // + feature.properties.mag
+        // + "<br>Depth: "
+        // + feature.geometry.coordinates[2]
+        // + "<br>Location: "
+        // + feature.properties.place
       );
     }
   }).addTo(map);
@@ -96,7 +101,15 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   legend.onAdd = function () {
     let div = L.DomUtil.create("div", "info legend");
 
-  
+    // let grades = [-10, 10, 30, 50, 70, 90];
+    // let colors = [
+    //   "#98ee00",
+    //   "#d4ee00",
+    //   "#eecc00",
+    //   "#ee9c00",
+    //   "#ea822c",
+    //   "#ea2c2c"
+    // ];
 
     // Looping through our intervals to generate a label with a colored square for each interval.
     for (let i = 0; i < grades.length; i++) {
